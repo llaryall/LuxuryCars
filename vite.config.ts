@@ -4,11 +4,8 @@ import { defineConfig } from "vite"
 
 
 export default defineConfig({
+  plugins: [react()],
   base: '/LuxuryCars/',
-  plugins: [
-    react(),
-    
-  ],
   	
   resolve: {
     alias: {
