@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate , Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/layout/Header';
@@ -30,12 +30,12 @@ const HomePage = () => {
             <p className="text-xl text-neutral-300 mb-8">
               Explore our exclusive collection of high-performance vehicles
             </p>
-            <a 
-              href="/cars" 
+            <Link
+              to="/cars" 
               className="bg-secondary-500 hover:bg-secondary-600 text-white py-3 px-8 rounded-lg text-lg font-medium transition-colors inline-block"
             >
               Browse Cars
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredCars.map(car => (
             <div key={car.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <a href={`/cars/${car.id}`}>
+              <Link to={`/cars/${car.id}`}>
                 <div className="relative h-56">
                   <img 
                     src={car.imageUrl} 
@@ -65,20 +65,20 @@ const HomePage = () => {
                     <span className="text-slate-600">{car.horsepower} HP</span>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
         <div className="text-center mt-8">
-          <a 
-            href="/cars" 
+          <Link
+            to="/cars" 
             className="text-teal-500 hover:text-teal-700 font-medium inline-flex items-center"
           >
             View All Cars
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
       

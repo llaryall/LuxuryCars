@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+   <html>
+     <head>
+       <meta charset="UTF-8">
+       <script type="text/javascript">
+         const path = window.location.pathname.replace(/^\/LuxuryCars\/?/, '');
+         window.history.pushState({}, '', '/LuxuryCars/');
+         window.location.href = window.location.origin + '/LuxuryCars/#' + path;
+       </script>
+     </head>
+     <body>
+       <h1>Redirecting...</h1>
+       <p>If you’re not redirected, <a href="/LuxuryCars/">click here to return to the homepage</a>.</p>
+     </body>
+   </html>
